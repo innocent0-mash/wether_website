@@ -35,12 +35,12 @@ window.addEventListener("load", () => {
     });
 
 });
-function getWeather(city) {
+async function getWeather(city) {
     document.querySelector(".weather").innerHTML = " ";
     // let URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
     let URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
 
-    fetch(URL)
+    await fetch(URL)
         .then((raw) => raw.json())
         .then((data) => {
             // console.log(data);
